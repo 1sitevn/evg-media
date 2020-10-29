@@ -71,11 +71,12 @@ if (!$isValid) {
     header('Content-Type: binary/octet-stream');
     header('Pragma: no-cache');
 
-    $secretKey = 'xxxxxx';
+    $secretKey = 'AAH5ew3jc3MefKTvTUl2rqACLLZ-5TCoNe8';
     $key = '416BB6208A1452435B9EF76C32C18292';
-    //$key = aes_encrypt($secretKey, $key);
+    $key = aes_encrypt($secretKey, $key);
 
-    echo hex2bin($key);
+    echo $key;
+    //echo hex2bin($key);
 
     exit(); // this is needed to ensure cr/lf is not added to output
 }
