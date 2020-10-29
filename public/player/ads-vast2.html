@@ -1,0 +1,39 @@
+<!DOCTYPE html lang="vi">
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./jwplayer-8.17.8/jwplayer.js" type="text/javascript"></script>
+</head>
+<body>
+  <center>
+    <div id='myvideo'></div>
+  </center>
+  <script type='text/javascript'>
+    jwplayer.key = "3SYLbRo6MN5cBDxwpZh3dl1gb0lMTUOos31M5hoAlf4=";
+    jwplayer('myvideo').setup({
+      base: './jwplayer-8.17.8/',
+      width: '640',
+      height: '360',
+      file: "http://vjs.zencdn.net/v/oceans.mp4",
+      image:'./assets/preview.jpg',
+      abouttext: "EVG Player 1.0",
+      aboutlink: "https://evgcorp.net",
+      autostart: true,
+      mute: true, //optional, but recommended
+      advertising: {
+        client: 'vast',
+        skipoffset: 3,
+        skipmessage: 'Bỏ qua sau XX giây',
+        skiptext: 'Bỏ qua',
+        admessage: 'Quảng cáo sẽ kết thúc sau xx giây',
+        cuetext: 'Quảng cáo',
+        schedule:{
+          preroll: { offset:'pre', tag: './ads/preroll.xml' },
+          overlay: { offset: 10, tag: './ads/overlay.xml', type:"nonlinear" },
+          midroll: { offset: 30, tag: './ads/midroll.xml', type:"linear" }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

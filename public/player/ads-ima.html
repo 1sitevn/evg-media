@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./jwplayer-8.17.8/jwplayer.js" type="text/javascript"></script>
+</head>
+<body style="background-color: #eee;">
+  <center>
+    <div id='myvideo'></div><br>
+    <div id="sample-companion-div" class="companion-ad">Companion Ad Placeholder</div>
+  </center>
+  <script type='text/javascript'>
+    jwplayer.key = "3SYLbRo6MN5cBDxwpZh3dl1gb0lMTUOos31M5hoAlf4=";
+    jwplayer('myvideo').setup({
+      base: './jwplayer-8.17.8/',
+      width: '680',
+      height: '382',
+      file: "http://vjs.zencdn.net/v/oceans.mp4",
+      image:'./assets/preview.jpg',
+      abouttext: "EVG Player 1.0",
+      aboutlink: "https://evgcorp.net",
+      autostart: true,
+      mute: true, //optional, but recommended
+      advertising: {
+        client: 'googima',
+        vpaidmode: 'insecure',
+        companiondiv: {
+          id: 'sample-companion-div',
+          height: 250,
+          width: 300
+        },
+        skipoffset: 5,
+        admessage: 'Quảng cáo sẽ kết thúc sau xx giây',
+        cuetext: 'Quảng cáo',
+        //tag: 'https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&correlator=',
+        /*schedule: [
+          {
+            offset: "pre",
+            tag: [
+                'https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpreonly&cmsid=496&vid=short_onecue&correlator='
+            ]
+          }
+        ]*/
+        schedule: {
+          pre: {
+            offset: "pre",
+            tag: [
+                'https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&correlator=',
+            ]
+          },
+          firstMid: {
+            offset: "10",
+            tag: "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dnonlinearvpaid2js&correlator="
+          },
+          thirdMid: {
+            offset: "90%",
+            tag: "https://pubads.g.doubleclick.net/gampad/ads?iu=/21775744923/external/simid&description_url=https%3A%2F%2Fdevelopers.google.com%2Finteractive-media-ads&tfcd=0&npa=0&sz=640x480&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator="
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
