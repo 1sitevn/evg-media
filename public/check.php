@@ -71,7 +71,7 @@ if (!$isValid) {
     header('Content-Type: binary/octet-stream');
     header('Pragma: no-cache');
 
-    $secretKey = 'AAH5ew3jc3MefKTvTUl2rqACLLZ-5TCoNe8';
+    $secretKey = 'j91xEtOM9O33dbSGTYpIx3pCpo7N52fD';
     $key = '416BB6208A1452435B9EF76C32C18292';
     $key = aes_encrypt($secretKey, $key);
 
