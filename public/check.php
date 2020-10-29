@@ -62,7 +62,7 @@ if (!function_exists('aes_decrypt')) {
     }
 }
 
-log_streaming_info(__DIR__ . "/logs.txt", json_encode($_GET));
+log_streaming_info(__DIR__ . "/logs/test.log", json_encode($_GET));
 
 $isValid = true;
 if (!$isValid) {
