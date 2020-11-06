@@ -73,10 +73,10 @@ if (!$isValid) {
 
     $secretKey = 'j91xEtOM9O33dbSGTYpIx3pCpo7N52fD';
     $key = '416BB6208A1452435B9EF76C32C18292';
-    $key = aes_encrypt($secretKey, $key);
+    //$key = aes_encrypt($secretKey, $key);
 
-    echo $key;
-    //echo hex2bin($key);
+    //echo $key;
+    echo hex2bin($key);
 
     exit(); // this is needed to ensure cr/lf is not added to output
 }
