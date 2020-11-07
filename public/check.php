@@ -39,7 +39,10 @@ if (!function_exists('aes_encrypt')) {
         $cipher = new \phpseclib\Crypt\AES();
         $cipher->setKeyLength(256);
         $cipher->setKey($secretKey);
-        //$cipher->setIV(\phpseclib\Crypt\Random::string($cipher->getBlockLength() >> 3));
+
+        //$iv = \phpseclib\Crypt\Random::string($cipher->getBlockLength() >> 3);
+        $iv = "I8zyA4lVhMCaJ5Kg";
+        $cipher->setIV($iv);
 
         return base64_encode($cipher->encrypt($plainText));
     }
