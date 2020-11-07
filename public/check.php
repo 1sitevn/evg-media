@@ -42,7 +42,7 @@ if (!function_exists('aes_encrypt')) {
 
         //$iv = \phpseclib\Crypt\Random::string($cipher->getBlockLength() >> 3);
         $iv = "I8zyA4lVhMCaJ5Kg";
-        $cipher->setIV($iv);
+        //$cipher->setIV($iv);
 
         return base64_encode($cipher->encrypt($plainText));
     }
@@ -79,8 +79,8 @@ if (!$isValid) {
     $key = '416BB6208A1452435B9EF76C32C18292';
     $key = aes_encrypt($secretKey, $key);
 
-    echo "7LC1t/unY1dGCQ5pjPgcrhhmczxTDWvUb/k+tRQppw/wUAeJWx0ZUg0KPqFERaNH";
-    //echo $key;
+    //echo "7LC1t/unY1dGCQ5pjPgcrhhmczxTDWvUb/k+tRQppw/wUAeJWx0ZUg0KPqFERaNH";
+    echo $key;
     //echo hex2bin($key);
 
     exit(); // this is needed to ensure cr/lf is not added to output
