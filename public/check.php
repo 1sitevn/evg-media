@@ -39,6 +39,7 @@ if (!function_exists('aes_encrypt')) {
         $cipher = new \phpseclib\Crypt\AES();
         $cipher->setKeyLength(256);
         $cipher->setKey($secretKey);
+        //$cipher->setIV(\phpseclib\Crypt\Random::string($cipher->getBlockLength() >> 3));
 
         return base64_encode($cipher->encrypt($plainText));
     }
@@ -68,15 +69,15 @@ $isValid = true;
 if (!$isValid) {
     header('HTTP/1.0 403 Forbidden');
 } else {
-    header('Content-Type: binary/octet-stream');
-    header('Pragma: no-cache');
+    #header('Content-Type: binary/octet-stream');
+    #header('Pragma: no-cache');
 
     $secretKey = 'j91xEtOM9O33dbSGTYpIx3pCpo7N52fD';
     $key = '416BB6208A1452435B9EF76C32C18292';
-    //$key = aes_encrypt($secretKey, $key);
+    $key = aes_encrypt($secretKey, $key);
 
-    //echo $key;
-    echo hex2bin($key);
+    echo $key;
+    //echo hex2bin($key);
 
     exit(); // this is needed to ensure cr/lf is not added to output
 }
