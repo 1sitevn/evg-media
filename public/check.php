@@ -42,7 +42,7 @@ if (!function_exists('aes_encrypt')) {
 
         //$iv = \phpseclib\Crypt\Random::string($cipher->getBlockLength() >> 3);
         $iv = "I8zyA4lVhMCaJ5Kg";
-        //$cipher->setIV($iv);
+        $cipher->setIV($iv);
 
         return base64_encode($cipher->encrypt($plainText));
     }
